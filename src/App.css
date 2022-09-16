@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.formSpacing div {
+  margin-bottom: 30px;
+}
+
+a {
+  text-decoration: none;
+  margin-left: 20px;
+  color: black;
+}
