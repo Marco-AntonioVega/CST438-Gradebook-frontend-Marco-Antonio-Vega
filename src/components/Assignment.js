@@ -48,7 +48,7 @@ class Assignment extends React.Component {
     console.log("Assignment.onRadioClick " + event.target.value);
     this.setState({selected: event.target.value});
   }
-  
+
   render() {
      const columns = [
       {
@@ -82,6 +82,10 @@ class Assignment extends React.Component {
             <Button component={Link} to={{pathname:'/gradebook',   assignment: assignmentSelected }} 
                     variant="outlined" color="primary" disabled={this.state.assignments.length===0}  style={{margin: 10}}>
               Grade
+            </Button>
+            <Button component={Link} to={{pathname:'/newAssignment' }} 
+                    variant="outlined" color="primary" style={{margin: 10}}>
+              Add New Assignment
             </Button>
             <ToastContainer autoClose={1500} /> 
           </div>
