@@ -37,7 +37,7 @@
   }
 }
 
-.formSpacing div {
+.formSpacing div, #statusMsg {
   margin-bottom: 30px;
 }
 
@@ -45,4 +45,16 @@ a {
   text-decoration: none;
   margin-left: 20px;
   color: black;
+}
+
+.successStatus {
+  color: green;
+}
+
+.failureStatus {
+  color: red;
+}
+
+.formInputMargin {
+  margin-left: 10px;
 }
