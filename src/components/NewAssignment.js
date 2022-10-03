@@ -14,7 +14,7 @@ function UpdateForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch('http://localhost:8081/gradebook/' + inputs.courseID + '/add',
+        fetch('http://localhost:8081/gradebook/newAssignment/' + inputs.courseID,
         {
             method: 'POST',
             headers: {
