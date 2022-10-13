@@ -47,6 +47,7 @@ function UpdateForm() {
                     <input
                         type="text"
                         name="name"
+                        id="name"
                         value={inputs.name}
                         onChange={handleChange}
                         className = "formInputMargin"
@@ -59,6 +60,7 @@ function UpdateForm() {
                     <input
                         type="date"
                         name="dueDate"
+                        id="dueDate"
                         value={inputs.dueDate}
                         onChange={handleChange}
                         className = "formInputMargin"
@@ -71,6 +73,7 @@ function UpdateForm() {
                     <input
                         type="text"
                         name="courseID"
+                        id="courseID"
                         value={inputs.courseID}
                         onChange={handleChange}
                         className = "formInputMargin"
@@ -81,6 +84,7 @@ function UpdateForm() {
             <div>
                 <Button 
                     type="submit"
+                    id="submit"
                     variant="outlined"
                     color="primary"
                     style={{margin: 10}}>
