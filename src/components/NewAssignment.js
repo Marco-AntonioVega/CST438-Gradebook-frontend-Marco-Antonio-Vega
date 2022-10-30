@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import Button from '@mui/material/Button';
+import Cookies from 'js-cookie';
 
 function UpdateForm() {
     const [inputs, setInputs] = useState({name: "", dueDate: "", courseID: ""});
@@ -14,16 +15,20 @@ function UpdateForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        console.log("Gradebook.submitAssignment");
+        const token = Cookies.get('XSRF-TOKEN');
         fetch('http://localhost:8081/gradebook/newAssignment/' + inputs.courseID,
         {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'X-XSRF-TOKEN': token
             },
             body: JSON.stringify({
                 name: inputs.name,
                 dueDate: inputs.dueDate
-            })
+            }),
+            credentials: 'include'
         })
         .then(response => {
                 var msg = document.getElementById("statusMsg");
@@ -41,7 +46,7 @@ function UpdateForm() {
     }
     
     return (
-        <form onSubmit={handleSubmit} class="formSpacing">
+        <form onSubmit={handleSubmit} className="formSpacing">
             <div>
                 <label>Assignment Name:
                     <input
